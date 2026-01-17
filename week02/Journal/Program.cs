@@ -1,3 +1,5 @@
+// I added a couple lines to "Confirm before loading" the files, because any other new entries not saved wont save. thought it would be helpful to confirm that.
+
 using System;
 
 class Program
@@ -47,6 +49,18 @@ class Program
                     break;
                     
                 case "4":
+                    // this checks if there are unsaved entries
+                    if (journal._entries.Count > 0)
+                    {
+                        Console.Write("Loading will replace current entries. Continue? (yes/no): ");
+                        string confirm = Console.ReadLine().ToLower();
+                        if (confirm != "yes")
+                        {
+                            Console.WriteLine("Load cancelled.\n");
+                            break;
+                        }
+                    }
+                    
                     Console.Write("Enter filename to load from: ");
                     string loadFilename = Console.ReadLine();
                     journal.LoadFromFile(loadFilename);
