@@ -1,4 +1,6 @@
 class Program
+
+// added a library of scriptures so the scripture can be random
 {
     static void Main(string[] args)
     {
