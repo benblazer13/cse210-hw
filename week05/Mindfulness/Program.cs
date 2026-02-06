@@ -1,3 +1,4 @@
+//i made a spinner to show loading times
 using System;
 
 class Program
